@@ -30,7 +30,7 @@ ct_blkgrps_sf <- readRDS(file = "../DATA/ct_blkgrps_sf_CUM.Rds")
 #create layer of municipalities
 ct_towns <- county_subdivisions("CT") %>% 
   st_transform(., crs = 4326) %>% 
-  select(NAME,NAMELSAD10)
+  select(NAME,NAMELSAD)
 
 # Assign municipality names to block groups
 ct_blkgrps_sf <- county_subdivisions("CT") %>% 
@@ -72,7 +72,7 @@ ct_blkgrps_sf <- ct_blkgrps_sf %>%
     lths80th = if_else(percent_rank(pct_lthsE) >= 0.8, "No HS Diploma", "NA"),
     pct2pov80th = if_else(percent_rank(pct2povE) >= 0.8, "Low Income", "NA"),
     eng_limit_pct80th = if_else(percent_rank(eng_limit_pctE) >= 0.8, "Limited English HH", "NA"),
-    CT_INCOME_80th = if_else(CT_INCOME == "I", "MA Low Income", "NA"),
+    CT_INCOME_80th = if_else(CT_INCOME == "I", "CT Low Income", "NA"),
     POPSlabel = gsub("^,*|(?<=,),|,*$", "", # get rid of extra commas
     str_remove_all( # get rid of NAs
       paste(Minority80th,
@@ -320,7 +320,7 @@ leaflet(width = "100%") %>%
               opacity = 1,
               color = "gray",
               fillOpacity = 0,
-              label=~NAME, popup=~NAMELSAD10, group='muni') %>% 
+              label=~NAME, popup=~NAMELSAD, group='muni') %>% 
   addPolygons(data = house_districts,
               weight = 2,
               opacity = 1,
@@ -461,7 +461,7 @@ leaflet(width = "100%") %>%
               opacity = 1,
               color = "gray",
               fillOpacity = 0,
-              label=~NAME, popup=~NAMELSAD10, group='muni') %>% 
+              label=~NAME, popup=~NAMELSAD, group='muni') %>% 
   addPolygons(data = house_districts,
               weight = 2,
               opacity = 1,
@@ -600,7 +600,7 @@ leaflet(width = "100%") %>%
               opacity = 1,
               color = "gray",
               fillOpacity = 0,
-              label=~NAME, popup=~NAMELSAD10, group='muni') %>% 
+              label=~NAME, popup=~NAMELSAD, group='muni') %>% 
   addPolygons(data = house_districts,
               weight = 2,
               opacity = 1,
@@ -996,6 +996,7 @@ sketch1 = htmltools::withTags(table(
 
 ct_towns %>% 
   as.data.frame() %>% 
+  arrange(NAME) %>% 
   filter(NAME != "County subdivisions not defined") %>%
   select(NAME, PM25_19.mean, pctrank_PM25_19.mean, DSLPM_19.mean,
          pctrank_DSLPM_19.mean, PTRAF_19.mean, pctrank_PTRAF_19.mean) %>% 
@@ -1029,6 +1030,8 @@ sketch2 = htmltools::withTags(table(
 
 house_districts %>% 
   as.data.frame() %>% 
+  filter(REP_DIST != "State House Districts not defined") %>% 
+  arrange(REP_DIST) %>% 
   select(REP_DIST, PM25_19.mean, pctrank_PM25_19.mean, DSLPM_19.mean,
          pctrank_DSLPM_19.mean, PTRAF_19.mean, pctrank_PTRAF_19.mean) %>% 
   datatable(., rownames = FALSE, options = list(pageLength = 10), 
@@ -1059,6 +1062,7 @@ sketch3 = htmltools::withTags(table(
 
 senate_districts %>% 
   as.data.frame() %>% 
+  arrange(SEN_DIST) %>% 
   select(SEN_DIST, PM25_19.mean, pctrank_PM25_19.mean, DSLPM_19.mean,
          pctrank_DSLPM_19.mean, PTRAF_19.mean, pctrank_PTRAF_19.mean) %>% 
   datatable(., rownames = FALSE, options = list(pageLength = 10), 
