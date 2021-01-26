@@ -77,7 +77,7 @@ house_districts <- st_read("../DATA/shapefiles/housect_37800_0000_2010_s100_cens
   transmute(REP_DIST = NAMELSAD10) %>% 
   st_transform(., crs = 4326) %>% 
   st_make_valid() %>% 
-  left_join(., read_csv("../tables/CT_burdens_house.csv"), 
+  left_join(., read_csv("../tables/CT_burdensCnt_house.csv"), 
             by = c("REP_DIST" = "House District")) 
 
 # create layer of state senate districts and join table of burdens
@@ -85,7 +85,7 @@ senate_districts <- st_read("../DATA/shapefiles/senatect_37800_0000_2010_s100_ce
   transmute(SEN_DIST = NAMELSAD10) %>% 
   st_transform(., crs = 4326) %>% 
   st_make_valid() %>% 
-  left_join(., read_csv("../tables/CT_burdens_senate.csv"), 
+  left_join(., read_csv("../tables/CT_burdensCnt_senate.csv"), 
             by = c("SEN_DIST" = "Senate District")) 
 
 # Assign state house district names to block groups
