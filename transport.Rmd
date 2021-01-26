@@ -1017,8 +1017,8 @@ ct_transitAccessPops_df %>%
   mutate(PctBus = round(PctBus,1), 
          Status = case_when(
            Group == "Total Pop" ~ "State avg",
-           PctBus < ct_transitAccessPops_df[1,7] ~ "Below state avg",
-           PctBus > ct_transitAccessPops_df[1,7] ~ "Above state avg"),
+           PctBus < ct_transitAccessPops_df[1,6] ~ "Below state avg",
+           PctBus > ct_transitAccessPops_df[1,6] ~ "Above state avg"),
          Group = recode(Group, "Minority" = "People of Color",
                         "No HS Dip" = "No HS Diploma")) %>% 
   mutate(Group = factor(Group) %>% fct_reorder(PctBus, .desc = FALSE)) %>% 
