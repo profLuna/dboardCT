@@ -114,8 +114,6 @@ ct_blkgrps_sf <- ct_blkgrps_sf %>%
     pct2pov80th = if_else(percent_rank(pct2povE) >= 0.8, "Low Income", "NA"),
     eng_limit_pct80th = if_else(percent_rank(eng_limit_pctE) >= 0.8, "Limited English HH", "NA"),
     CT_INCOME_80th = if_else(CT_INCOME == "I", "MA Low Income", "NA"),
-    CT_MINORITY_80th = if_else(CT_MINORITY == "M", "MA Minority", "NA"),
-    CT_ENGLISH_80th = if_else(CT_ENGLISH == "E", "MA Limited English HH", "NA"),
     POPSlabel = gsub("^,*|(?<=,),|,*$", "", # get rid of extra commas
     str_remove_all( # get rid of NAs
       paste(Minority80th,
@@ -125,9 +123,7 @@ ct_blkgrps_sf <- ct_blkgrps_sf %>%
             lths80th,
             pct2pov80th,
             eng_limit_pct80th,
-            CT_INCOME_80th,
-            CT_MINORITY_80th,
-            CT_ENGLISH_80th, sep = ","),
+            CT_INCOME_80th, sep = ","),
       pattern = "NA"), 
     perl=T
     ),
@@ -532,7 +528,7 @@ leaflet(width = "100%") %>%
   addLegend(colors = "red",
             labels = "No Bus Access for Priority Pops",
             position = "bottomleft") %>%
-  setView(lng = -71.7, 42.1, zoom = 8) %>% 
+  setView(-72.6, 41.4, zoom = 8) %>% 
   # addMiniMap() %>% 
   addScaleBar(position = "bottomright") %>% 
   addSearchFeatures(targetGroups  = 'muni', 
@@ -681,7 +677,7 @@ leaflet(width = "100%") %>%
                             formatC(cuts[-1], big.mark = ",", digits = 1, 
                                     format = "f"))
               }) %>% 
-  setView(lng = -71.7, 42.1, zoom = 8) %>% 
+  setView(-72.6, 41.4, zoom = 8) %>% 
   # addMiniMap() %>% 
   addScaleBar(position = "bottomright") %>% 
   addSearchFeatures(targetGroups  = 'muni', 
@@ -824,7 +820,7 @@ leaflet(width = "100%") %>%
                             formatC(cuts[-1], big.mark = ",", digits = 1, 
                                     format = "f"))
               }) %>% 
-  setView(lng = -71.7, 42.1, zoom = 8) %>% 
+  setView(-72.6, 41.4, zoom = 8) %>% 
   # addMiniMap() %>% 
   addScaleBar(position = "bottomright") %>% 
   addSearchFeatures(targetGroups  = 'muni', 
@@ -963,7 +959,7 @@ leaflet(width = "100%") %>%
                             formatC(cuts[-1], big.mark = ",", digits = 1, 
                                     format = "f"))
               }) %>% 
-  setView(lng = -71.7, 42.1, zoom = 8) %>% 
+  setView(-72.6, 41.4, zoom = 8) %>% 
   # addMiniMap() %>% 
   addScaleBar(position = "bottomright") %>% 
   addSearchFeatures(targetGroups  = 'muni', 
