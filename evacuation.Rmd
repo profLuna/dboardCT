@@ -414,7 +414,7 @@ rm(list = ls(pattern = paste("ne_","muni", "hevac", "nfhza", "_tracts_",
 
 Flood and storm surge are significant risks in Connecticut. In the event of extensive inland or coastal flooding, evacuation may be required. For individuals and households with limited mobility, either due to inadequate access to transportation options or because of physical limitations, evacuation presents heightened risk. Evacuation may also prove especially difficult for individuals and households due to limited economic resources, difficulty understanding or accessing information, or low trust in official sources of information. 
 
-Over 371,000 people in Connecticut live in a FEMA flood risk zone and almost one million live in a hurricane evacuation zone. Limited English speaking households, households without a car, and lower income persons are disproportionately present in either a flood or a hurricane evacuation zone.
+Over 257,000 people live in a FEMA flood zone and over 342,000 live in a hurricane evacuation zone. Households without a car and Connecticut’s low income EJ block groups are disproportionately present in either a flood or a hurricane evacuation zone.
 
 These interactive figures identify communities across Connecticut that are most most vulnerable to the risks of inland flooding or coastal storm surge.
 
@@ -727,7 +727,7 @@ ct_HevacPops_df %>%
            PctHevac > ct_HevacPops_df[ct_HevacPops_df$Group=="Total Pop",4] ~ "Above state avg"),
     Group = recode(Group, "Minority" = "People of Color",
                         "No HS Dip" = "No HS Diploma"),
-    PctHevac = round(PctHevac,1)) %>% 
+    PctHevac = round(PctHevac,2)) %>% 
   mutate(Group = factor(Group) %>% fct_reorder(PctHevac, .desc = TRUE)) %>% 
   mutate(group_index = as.numeric(Group)) %>% 
   hchart(., "bar", hcaes(x = group_index, y = PctHevac, 
