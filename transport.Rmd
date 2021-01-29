@@ -1012,13 +1012,13 @@ Metrics of transportation access and adequacy:
 ### Bus Access
 
 ```{r graphBusAccess, fig.align="center", fig.cap="Percentage of population groups within 1/4 mile (400 meters) of a bus stop across Connecticut."}
-ct_busAccessPops_df %>% 
+ct_transitAccessPops_df %>% 
   arrange(PctBus) %>% 
   mutate(PctBus = round(PctBus,1), 
          Status = case_when(
            Group == "Total Pop" ~ "State avg",
-           PctBus < ct_busAccessPops_df[1,6] ~ "Below state avg",
-           PctBus > ct_busAccessPops_df[1,6] ~ "Above state avg"),
+           PctBus < ct_transitAccessPops_df[1,6] ~ "Below state avg",
+           PctBus > ct_transitAccessPops_df[1,6] ~ "Above state avg"),
          Group = recode(Group, "Minority" = "People of Color",
                         "No HS Dip" = "No HS Diploma")) %>% 
   mutate(Group = factor(Group) %>% fct_reorder(PctBus, .desc = FALSE)) %>% 
