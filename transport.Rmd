@@ -1,6 +1,11 @@
 ---
-title: "Transport"
+title: "Connecticut"
 ---
+<style type="text/css">
+h1.title {
+  text-align: center;
+}
+</style>
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE)
@@ -402,10 +407,15 @@ Tcost80th <- round(quantile(ct_blkgrps_sf$hh7_t, 0.8, na.rm = T),1)
 # clean up "ct_blkgrps_sf$",
 rm(list = ls(pattern = paste("muni", "_80th", "headway80th", "_tract", "houseNoBus", "Transport", "houseWalk", "senateNoBus", "senateWalk", "lai_ct_blkgrp", "lai_ToverH", "_noTransit", "ct_blkgrps_sf_noBus", sep = "|"), ))
 ```
-
+---
+# Transport
 The most important benefit of a transportation system is the access it provides to opportunity – economic, educational, health care, civic life, and simple freedom of movement.  Lack of adequate access to transportation hinders these opportunities. 
 
-Despite the variety of transit services across Connecticut, 45% of the state’s residents do not have physical access to any form of public transit. Only 30% of the population lives within a reasonable walking distance of a bus stop. The places that have the least access to public transit, the least frequent service, lower than average walkability, and the highest transportation cost burdens are all the less urban parts of the state, particularly for persons over 64 years of age.
+Despite the variety of transit services across Connecticut, 
+
+* 45% of the state’s residents do not have physical access to any form of public transit. 
+* Only 30% of the population lives within a reasonable walking distance of a bus stop. 
+* The places that have the least access to public transit, the least frequent service, lower than average walkability, and the highest transportation cost burdens are all the less urban parts of the state, particularly for persons over 64 years of age.
 
 These interactive figures identify communities across Connecticut that are most underserved and most sensitive to the quality of four transportation metrics: access to public transit, transit headways, neighborhood walkability, and transportation cost burden.  
 

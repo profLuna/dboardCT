@@ -1,5 +1,5 @@
 ---
-title: "Cumulative Burdens + Priority Populations"
+title: "Connecticut"
 ---
 
 <style type="text/css">
@@ -8,6 +8,9 @@ title: "Cumulative Burdens + Priority Populations"
   margin-left: auto;
   margin-right: auto;
   div.info.legend.leaflet-control br {clear: both;}
+}
+h1.title {
+  text-align: center;
 }
 </style>
 
@@ -172,10 +175,15 @@ senate_districts <- senate_districts %>%
          `4 Burdens` = X4.Burdens,
          `3+ Burdens` = X3..Burdens)
 ```
-
+---
+# Cumulative Burdens + Priority Populations
 Connecticut needs progressive and equitable investment in transportation. This investment should prioritize communities that have borne the brunt of burdens from the current transportation system, and which have benefited the least from the same system.
 
-Our analysis shows that areas with high percentages of priority populations and the highest rankings of multiple cumulative environmental burdens fall along I-95 in the southeast corner of the state from Greenwich to New Haven, and in the greater Hartford and New Britain region. People living in Connecticut's state-designated low income communities, limited English speaking households, and people of color are the most affected groups, especially for air quality, heat, and flood or evacuation risk. Priority populations, especially those over 64, living in rural and suburban areas, lack transportation options and face high costs for transportation.
+Our analysis shows that 
+
+* Areas with high percentages of priority populations and the highest rankings of multiple cumulative environmental burdens fall along I-95 in the southeast corner of the state from Greenwich to New Haven, and in the greater Hartford and New Britain region. 
+* People living in Connecticut's state-designated low income communities, limited English speaking households, and people of color are the most affected groups, especially for air quality, heat, and flood or evacuation risk. 
+* Priority populations, especially those over 64, living in rural and suburban areas, lack transportation options and face high costs for transportation.
 
 These interactive figures identify communities across Connecticut that are most overburdened and most vulnerable to transportation-related environmental burdens or the absence of transportation-related benefits.
 

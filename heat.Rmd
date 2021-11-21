@@ -1,6 +1,11 @@
 ---
-title: "Heat"
+title: "Connecticut"
 ---
+<style type="text/css">
+h1.title {
+  text-align: center;
+}
+</style>
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE)
@@ -354,10 +359,12 @@ LSTNightPop <- ct_blkgrpLST_sf %>%
 # clean up
 rm(list = ls(pattern = paste("muni", "_80th", "houseN", "senateN", "houseL", "senateL", "houseU", "senateU", "houseD", "senateD", "ct_blkgrpLST_sf$", sep = "|")))
 ```
-
+---
+# Heat
 Heat is the leading cause of weather-related death in the U.S. Warmer air temperatures can also exacerbate air pollution, especially ground-level ozone. As the climate warms, heat presents both a direct and indirect threat to health and quality of life. 
 
-Higher temperatures throughout the day and night are found in all urbanized areas of the state and follow the major roadways very closely. This is also true for areas experiencing high levels of urban heat island effect. Limited English speaking households and Connecticut’s low income EJ block groups are more likely to experience the highest daytime and nighttime temperatures than the general population.
+* Higher temperatures throughout the day and night are found in all urbanized areas of the state and follow the major roadways very closely. This is also true for areas experiencing high levels of urban heat island effect. 
+* Limited English speaking households and Connecticut’s low income EJ block groups are more likely to experience the highest daytime and nighttime temperatures than the general population.
 
 These interactive figures identify communities across Connecticut that are most overburdened and most vulnerable to three measures of ambient temperature: Day-Night average land surface temperatures (LST), the Urban Heat Island effect, and elevated nighttime LST.
 

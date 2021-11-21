@@ -1,6 +1,11 @@
 ---
-title: "Emissions"
+title: "Connecticut"
 ---
+<style type="text/css">
+h1.title {
+  text-align: center;
+}
+</style>
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE)
@@ -252,10 +257,13 @@ rm(list = ls(pattern = paste("muni", "_80th", "Emissions",
 # ct_blkgrps_sf <- ct_blkgrps_sf %>%
 #   select(BurdenCount, NAME, REP_DIST, SEN_DIST, TOWN, BURDENSlabel, POPSlabel)
 ```
-
+---
+# Emissions
 Transportation accounts for a significant share of air pollution. 
 
-Concentrations of hazardous air pollutants and associated risks are highest in Southwest Connecticut, specifically the corridor along I-95 between Greenwich and New Haven. In addition, the I-91 corridor between New Haven and Hartford also shows high emissions and related risks. Limited English speaking households, people of color, and people living in areas classified as Low Income by state policy are by far the most exposed to higher levels of air pollutants and are living in close proximity to high traffic corridors.
+* Concentrations of hazardous air pollutants and associated risks are highest in Southwest Connecticut, specifically the corridor along I-95 between Greenwich and New Haven. 
+* In addition, the I-91 corridor between New Haven and Hartford also shows high emissions and related risks. 
+* Limited English speaking households, people of color, and people living in areas classified as Low Income by state policy are by far the most exposed to higher levels of air pollutants and are living in close proximity to high traffic corridors.
 
 These interactive figures identify communities across Connecticut that are most overburdened and most vulnerable to three transportation-related burdens: PM~2.5~, Diesel Particulate Matter (DPM), and Traffic Volume and Proximity.
 
